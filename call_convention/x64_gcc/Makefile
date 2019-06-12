@@ -1,7 +1,7 @@
-src = main.c sum.S
+src = main.c sum.S vecsum.S
 
 all: $(src)
-	gcc $(src) -o callsum.out
+	gcc $^ -o callsum.out
 
 clean:
 	-rm *.out
