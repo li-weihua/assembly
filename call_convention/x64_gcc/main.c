@@ -15,7 +15,11 @@ sum4(int, int, int, int, int, int,
      int, float, float, int);
 
 // passing pointers
-extern int vecsum(int *vec, int n);
+extern int intsum(int *vec, int n);
+extern double floatsum(double*, unsigned int);
+
+// recursive function
+extern long factorial(unsigned int n);
 
 int main() {
 
@@ -27,8 +31,20 @@ int main() {
                       11,12,13,14));
   
 
-  int vec[] = {1,2,3,4,5,6,7,8,9};
-  printf("%d\n", vecsum(vec, 9));
+  int intvec[] = {1,2,3,4,5,6,7,8,9};
+  printf("%d\n", intsum(intvec, 9));
+
+  double floatvec[] = {40.5, 26.7, 21.9, 1.5, -40.5, -23.4};
+  printf("%f\n", floatsum(floatvec, 6));
+  printf("%f\n", floatsum(floatvec, 2));
+  printf("%f\n", floatsum(floatvec, 0));
+  printf("%f\n", floatsum(floatvec, 3));
+
+  printf("factorial function:\n");
+
+  for (int i=0; i<11; ++i) {
+    printf("%d! = %ld\n", i, factorial(i));
+  }
 
   return 0;
 }

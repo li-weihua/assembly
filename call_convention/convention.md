@@ -41,4 +41,4 @@ Callee-saved register cannot be modified.
 
 ## pointer paramter
 
-When int pointer is the first parameter, it is passed by **rdi** register.
+When the parameter is pointer, it is passed as integer parameter.
