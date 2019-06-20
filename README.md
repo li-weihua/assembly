@@ -1,3 +1,3 @@
 # assembly learning
 
-[calling convention](./call_convention/convention.md)
+[calling convention](./call_convention/abi_x64_gcc.md)

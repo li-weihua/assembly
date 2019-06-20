@@ -1,5 +1,7 @@
 # gcc x64 function calling convention
 
+reference website: https://github.com/hjl-tools/x86-psABI/wiki/X86-psABI
+
 ## integer type
 
 The first six integer parameters are passed by **rdi , rsi , rdx , rcx , r8 , r9**,  the left are passed via stack, eg, 8(%rsp) ...
