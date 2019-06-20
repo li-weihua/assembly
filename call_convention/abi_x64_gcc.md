@@ -47,5 +47,11 @@ When the parameter is pointer, it is passed as integer parameter.
 
 ## struct parameter
 
-If the size of struct exceeds two eight-bytes, it will be passed by stack. Otherwise, directly by integer register.
+1. If the size of struct exceeds two eight-bytes, it will be passed by stack. 
+2. Structures and unions assume the alignment of their most strictly aligned component. Each member is assigned to the lowest available offset with the appropriate alignment. Structure and union objects can require padding to meet size and alignment constraints.
 
+Combine 1 and 2, e.g. mixing int and long should be carefull,  
+```c
+struct Struct_3i {int a; long b;  int c;};  
+```
+After **a** it should be padding 4 bytes to meet alignment, so **Struct_3i** is passed by stack.

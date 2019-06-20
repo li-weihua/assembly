@@ -31,6 +31,12 @@ typedef struct {
 } Struct_2i;
 
 typedef struct {
+  int a;
+  long b;
+  int c;
+} Struct_3i;
+
+typedef struct {
   int a, b, c, d;
 } Struct_4i;
 
@@ -39,6 +45,7 @@ typedef struct {
 } Struct_5i;
 
 extern int sumstruct_2i(Struct_2i);
+extern int sumstruct_3i(Struct_3i);
 extern int sumstruct_4i(Struct_4i);
 extern int sumstruct_5i(Struct_5i);
 
@@ -69,10 +76,12 @@ int main() {
 
   // struct parameters
   Struct_2i s2i = {.a=2, .b=-10};
+  Struct_3i s3i = {.a=2, .b=-10, .c=-1};
   Struct_4i s4i = {.a=2, .b=-10, .c=-1, .d=3};
   Struct_5i s5i = {.a=2, .b=-10, .c=-1, .d=3, .e=-5};
 
   printf("sum_2i = %d\n", sumstruct_2i(s2i));
+  printf("sum_3i = %d\n", sumstruct_3i(s3i));
   printf("sum_4i = %d\n", sumstruct_4i(s4i));
   printf("sum_5i = %d\n", sumstruct_5i(s5i));
 
