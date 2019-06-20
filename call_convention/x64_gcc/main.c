@@ -1,13 +1,17 @@
 #include <stdio.h>
 
+// integer parameters
 extern int sum1(int, int, int, int, int, int, int, int);
 
+// mix integer and float type
 extern int sum2(float, int, int, float, int, float, int, float, int);
 
+// float type
 extern float 
 sum3(float,float,float,float,float,
      float,float,float,float,float);
 
+// mix int and float
 extern float 
 sum4(int, int, int, int, int, int,
      float,float,float,float,
@@ -20,6 +24,23 @@ extern double floatsum(double*, unsigned int);
 
 // recursive function
 extern long factorial(unsigned int n);
+
+// passing struct
+typedef struct {
+  int a, b;
+} Struct_2i;
+
+typedef struct {
+  int a, b, c, d;
+} Struct_4i;
+
+typedef struct {
+  int a, b, c, d, e;
+} Struct_5i;
+
+extern int sumstruct_2i(Struct_2i);
+extern int sumstruct_4i(Struct_4i);
+extern int sumstruct_5i(Struct_5i);
 
 int main() {
 
@@ -45,6 +66,15 @@ int main() {
   for (int i=0; i<11; ++i) {
     printf("%d! = %ld\n", i, factorial(i));
   }
+
+  // struct parameters
+  Struct_2i s2i = {.a=2, .b=-10};
+  Struct_4i s4i = {.a=2, .b=-10, .c=-1, .d=3};
+  Struct_5i s5i = {.a=2, .b=-10, .c=-1, .d=3, .e=-5};
+
+  printf("sum_2i = %d\n", sumstruct_2i(s2i));
+  printf("sum_4i = %d\n", sumstruct_4i(s4i));
+  printf("sum_5i = %d\n", sumstruct_5i(s5i));
 
   return 0;
 }

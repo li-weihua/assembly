@@ -39,6 +39,11 @@ Callee-saved register cannot be modified.
 | caller-saved registers | 6-parameters, RAX, R10,  R11,  K0-K8, xmm0-xmm15, ymm0-ymm15, zmm0-zmm31 |
 | callee-saved registers | RBX , RBP , R12 - R15                                        |
 
-## pointer paramter
+## pointer parameter
 
 When the parameter is pointer, it is passed as integer parameter.
+
+## struct parameter
+
+If the size of struct exceeds two eight-bytes, it will be passed by stack. Otherwise, directly by integer register.
+
