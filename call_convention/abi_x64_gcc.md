@@ -2,6 +2,16 @@
 
 reference website: https://github.com/hjl-tools/x86-psABI/wiki/X86-psABI
 
+The document defines seven categories:
+
+> **INTEGER**  This class consists of integral types that fit into one of the general purpose registers
+> **SSE**      The class consists of types that fit into a vector register.
+> **SSEUP** The class consists of types that fit into a vector register and can be passed and returned in the upper bytes of it.
+> **X87, X87UP**  These classes consists of types that will be returned via the x87 FPU.
+> **COMPLEX_X87**  This class consists of types that will be returned via the x87 FPU.
+> **NO_CLASS**  This class is used as initializer in the algorithms. It will be used for padding and empty structures and unions.
+> **MEMORY**  This class consists of types that will be passed and returned in memory via the stack.
+
 ## integer type
 
 The first six integer parameters are passed by **rdi , rsi , rdx , rcx , r8 , r9**,  the left are passed via stack, eg, 8(%rsp) ...
@@ -43,7 +53,7 @@ Callee-saved register cannot be modified.
 
 ## pointer parameter
 
-When the parameter is pointer, it is passed as integer parameter.
+pointer treated as  integer paramter.
 
 ## struct parameter
 
