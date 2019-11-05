@@ -5,6 +5,15 @@ global avx512fma
 SECTION .text  align=16
 
 avx512fma:
+  vpxord zmm0, zmm0
+  vpxord zmm1, zmm1
+  vpxord zmm2, zmm2
+  vpxord zmm3, zmm3
+  vpxord zmm4, zmm4
+  vpxord zmm5, zmm5
+  vpxord zmm6, zmm6
+  vpxord zmm7, zmm7
+  vpxord zmm8, zmm8
 L1:
   vfmadd231ps zmm0, zmm0, zmm0
   vfmadd231ps zmm1, zmm1, zmm1
