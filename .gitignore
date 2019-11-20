@@ -1,6 +1,8 @@
+# ignore files
 *.swp
 *.o
 *.a
 *.so
 
-build/
+# ignore directories
+
